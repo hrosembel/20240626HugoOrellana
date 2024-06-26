@@ -1,0 +1,12 @@
+C:\Projects\AFPCrecer\PruebaCrecerAPI\PruebaCrecerAPI.Models\bin\Debug\net6.0\PruebaCrecerAPI.Models.deps.json
+C:\Projects\AFPCrecer\PruebaCrecerAPI\PruebaCrecerAPI.Models\bin\Debug\net6.0\PruebaCrecerAPI.Models.dll
+C:\Projects\AFPCrecer\PruebaCrecerAPI\PruebaCrecerAPI.Models\bin\Debug\net6.0\PruebaCrecerAPI.Models.pdb
+C:\Projects\AFPCrecer\PruebaCrecerAPI\PruebaCrecerAPI.Models\obj\Debug\net6.0\PruebaCrecerAPI.Models.csproj.AssemblyReference.cache
+C:\Projects\AFPCrecer\PruebaCrecerAPI\PruebaCrecerAPI.Models\obj\Debug\net6.0\PruebaCrecerAPI.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\AFPCrecer\PruebaCrecerAPI\PruebaCrecerAPI.Models\obj\Debug\net6.0\PruebaCrecerAPI.Models.AssemblyInfoInputs.cache
+C:\Projects\AFPCrecer\PruebaCrecerAPI\PruebaCrecerAPI.Models\obj\Debug\net6.0\PruebaCrecerAPI.Models.AssemblyInfo.cs
+C:\Projects\AFPCrecer\PruebaCrecerAPI\PruebaCrecerAPI.Models\obj\Debug\net6.0\PruebaCrecerAPI.Models.csproj.CoreCompileInputs.cache
+C:\Projects\AFPCrecer\PruebaCrecerAPI\PruebaCrecerAPI.Models\obj\Debug\net6.0\PruebaCrecerAPI.Models.dll
+C:\Projects\AFPCrecer\PruebaCrecerAPI\PruebaCrecerAPI.Models\obj\Debug\net6.0\refint\PruebaCrecerAPI.Models.dll
+C:\Projects\AFPCrecer\PruebaCrecerAPI\PruebaCrecerAPI.Models\obj\Debug\net6.0\PruebaCrecerAPI.Models.pdb
+C:\Projects\AFPCrecer\PruebaCrecerAPI\PruebaCrecerAPI.Models\obj\Debug\net6.0\ref\PruebaCrecerAPI.Models.dll
