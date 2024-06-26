@@ -19,6 +19,21 @@ namespace PruebaCrecerAPI.DAL.Implementations
         {
             _connectionStrings = options.Value;
         }
+
+        public async Task<bool> AgregarDepartamento(NuevoDepartamento nuevoDepartamento)
+        {
+            var successful = false;
+            using (IDbConnection db = new SqlConnection(_connectionStrings.SqlConnectionString))
+            {
+                // Consulta SQL para la inserción
+                string sqlQuery = "INSERT INTO EmpresaDepartamento (IdEmpresa, IdDepartamento, NumeroEmpleados) VALUES (@IdEmpresa, @IdDepartamento, @NumeroEmpleados);";
+
+                // Ejecutamos la consulta utilizando Dapper
+                successful = db.Execute(sqlQuery, nuevoDepartamento) > 0;
+            }
+            return successful;
+        }
+
         public async Task<List<Departamento>> ObtenerPorNITEmpresa(string NIT)
         {
             List<Models.Departamento> departamentos = new();

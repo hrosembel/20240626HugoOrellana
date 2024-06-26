@@ -14,6 +14,21 @@ namespace PruebaCrecerAPI.DAL.Implementations
         {
             _connectionStrings = options.Value;
         }
+
+        public async Task<bool> AgregarEmpresa(NuevaEmpresa nuevaEmpresa)
+        {
+            var successful = false;
+            using (IDbConnection db = new SqlConnection(_connectionStrings.SqlConnectionString))
+            {
+                // Consulta SQL para la inserción
+                string sqlQuery = "INSERT INTO Empresa (NIT, Nombre, RazonSocial, FechaRegistro, Bitacora) VALUES (@NIT, @Nombre, @RazonSocial, GETDATE(), @Bitacora);";
+
+                // Ejecutamos la consulta utilizando Dapper
+                successful = db.Execute(sqlQuery, nuevaEmpresa) > 0;
+            }
+            return successful;
+        }
+
         public async Task<Models.Empresa> ObtenerEmpresaPorNIT(string NIT)
         {
             Models.Empresa empresa = new ();

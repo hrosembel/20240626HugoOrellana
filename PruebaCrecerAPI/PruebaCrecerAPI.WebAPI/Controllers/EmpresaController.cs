@@ -14,6 +14,20 @@ namespace PruebaCrecerAPI.WebAPI.Controllers
             _empresaData = empresaData;
         }
 
+        [HttpPost]
+        public async Task<IActionResult> AgregarEmpresa([FromBody] Models.NuevaEmpresa nuevaEmpresa)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Not a valid model");
+            }
+
+            //Verificar si existe
+
+            var successful = _empresaData.AgregarEmpresa(nuevaEmpresa);
+            return Ok(successful);
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> ObtenerEmpresaPorNIT(string NIT) 

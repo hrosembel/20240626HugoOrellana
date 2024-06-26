@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PruebaCrecerAPI.DAL.Implementations;
 using PruebaCrecerAPI.DAL.Interfaces;
 
 namespace PruebaCrecerAPI.WebAPI.Controllers
@@ -14,6 +15,19 @@ namespace PruebaCrecerAPI.WebAPI.Controllers
             _departamentoData = departamentoData;
         }
 
+        [HttpPost]
+        public async Task<IActionResult> AgregarDepartamento([FromBody] Models.NuevoDepartamento nuevoDepartamento)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Not a valid model");
+            }
+
+            //Verificar si existe
+
+            var successful = _departamentoData.AgregarDepartamento(nuevoDepartamento);
+            return Ok(successful);
+        }
 
         [HttpGet]
         public async Task<IActionResult> ObtenerPorNITEmpresa(string NIT)
