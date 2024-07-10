@@ -29,17 +29,16 @@ namespace PruebaCrecerAPI.DAL.Implementations
             return successful;
         }
 
-        public async Task<Models.Empresa> ObtenerEmpresaPorNIT(string NIT)
+        public async Task<Models.NuevaEmpresa> ObtenerEmpresaPorNIT(string NIT)
         {
-            Models.Empresa empresa = new ();
+            Models.NuevaEmpresa empresa = new ();
             using (IDbConnection db = new SqlConnection(_connectionStrings.SqlConnectionString))
             {
                 db.Open();
                 // Llamada al stored procedure usando Dapper
                 var parameters = new { NIT = NIT };
-                var empresas = db.Query<Empresa>("ObtenerEmpresaPorNIT", parameters, commandType: CommandType.StoredProcedure);
+                empresa = db.QueryFirst<NuevaEmpresa>("ObtenerEmpresaPorNIT", parameters, commandType: CommandType.StoredProcedure);
 
-                empresa = empresas.FirstOrDefault();
             }
             return empresa;
         }

@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PruebaCrecerAPI.DAL.Implementations;
-using PruebaCrecerAPI.DAL.Interfaces;
+using PruebaCrecerAPI.BLL.Interfaces;
 
 namespace PruebaCrecerAPI.WebAPI.Controllers
 {
@@ -9,28 +8,36 @@ namespace PruebaCrecerAPI.WebAPI.Controllers
     [ApiController]
     public class DepartamentosController : ControllerBase
     {
-        private readonly IDepartamentoData _departamentoData;
-        public DepartamentosController(IDepartamentoData departamentoData)
+        private readonly IDepartamentoService _service;
+        public DepartamentosController(IDepartamentoService service)
         {
-            _departamentoData = departamentoData;
+            _service = service;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> AgregarDepartamento([FromBody] Models.NuevoDepartamento nuevoDepartamento)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest("Not a valid model");
-            }
+        //[HttpGet]
+        //public async Task<IActionResult> ObtenerDepartamentos()
+        //    => Ok(await _service.GetAll());
 
-            //Verificar si existe
+        //[HttpGet]
+        //public async Task<IActionResult> ObtenerPorId(int id)
+        //    => Ok(await _service.GetById(id));
 
-            var successful = _departamentoData.AgregarDepartamento(nuevoDepartamento);
-            return Ok(successful);
-        }
+        //[HttpPost]
+        //public async Task<IActionResult> AgregarDepartamento([FromBody] Models.NuevoDepartamento nuevoDepartamento)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest("Not a valid model");
+        //    }
 
-        [HttpGet]
-        public async Task<IActionResult> ObtenerPorNITEmpresa(string NIT)
-            => Ok(await _departamentoData.ObtenerPorNITEmpresa(NIT));
+        //    //Verificar si existe
+
+        //    var successful = await _service.Create(nuevoDepartamento);
+        //    return Ok(successful);
+        //}
+
+        //[HttpGet]
+        //public async Task<IActionResult> ObtenerPorNITEmpresa(string NIT)
+        //    => Ok(await _departamentoData.ObtenerPorNITEmpresa(NIT));
     }
 }

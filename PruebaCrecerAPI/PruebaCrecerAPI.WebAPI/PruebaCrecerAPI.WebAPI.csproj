@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PruebaCrecerAPI.BLL\PruebaCrecerAPI.BLL.csproj" />
     <ProjectReference Include="..\PruebaCrecerAPI.DAL\PruebaCrecerAPI.DAL.csproj" />
   </ItemGroup>
 

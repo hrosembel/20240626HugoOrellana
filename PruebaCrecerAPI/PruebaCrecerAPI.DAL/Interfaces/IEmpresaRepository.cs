@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace PruebaCrecerAPI.DAL.Interfaces
 {
-    public interface IEmpresaData
+    public interface IEmpresaRepository
     {
-        Task<bool> AgregarEmpresa(NuevaEmpresa nuevaEmpresa);
-        Task<Models.NuevaEmpresa> ObtenerEmpresaPorNIT(string NIT);
+        Task<NuevaEmpresa?> ObtenerEmpresaPorNIT(string NIT);
     }
 }

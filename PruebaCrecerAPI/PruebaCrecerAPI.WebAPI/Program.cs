@@ -1,3 +1,5 @@
+using PruebaCrecerAPI.BLL.Implementations;
+using PruebaCrecerAPI.BLL.Interfaces;
 using PruebaCrecerAPI.DAL;
 using PruebaCrecerAPI.DAL.Implementations;
 using PruebaCrecerAPI.DAL.Interfaces;
@@ -11,8 +13,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection("ConnectionStrings"));
 
-builder.Services.AddSingleton<IEmpresaData, EmpresaData>();
-builder.Services.AddSingleton<IDepartamentoData, DepartamentoData>();
+builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+
+builder.Services.AddScoped<IEmpresaService, EmpresaService>();
+builder.Services.AddScoped<IDepartamentoService, DepartamentoService>();
+
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
